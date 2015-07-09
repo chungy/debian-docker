@@ -3,6 +3,8 @@ MAINTAINER Jonathan Dowland <jmtd@debian.org>
 ADD root.tar /
 RUN apt-get update \
 	&& apt-get -y upgrade \
+	&& apt-get -y install --no-install-recommends \
+	              asciidoc deutex git gsfonts imagemagick make python zip \
 	&& apt-get -y autoremove \
 	&& apt-get clean \
 	&& find /var/lib/apt/lists -type f -delete
